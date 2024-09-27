@@ -15,7 +15,9 @@ DEPFLAGS	=	-c -MT $$@ -MMD -MP -MF \
 SOURCES		:=	main.cpp \
 				Animal.cpp \
 				Dog.cpp \
-				Cat.cpp
+				Cat.cpp \
+				WrongAnimal.cpp \
+				WrongCat.cpp
 
 SRCS	:= $(foreach s, $(SOURCES), $(shell find . -name $(s)))
 OBJS	:= $(patsubst ./%.cpp, ./$(BUILDDIR)/%.o, $(SRCS))
