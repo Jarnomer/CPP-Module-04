@@ -3,18 +3,26 @@
 #include "Dog.hpp"
 
 int main(void) {
-  const Animal *meta = new Animal();
+  const unsigned int count = 4;
+  const Animal *animal[count];
+  unsigned int i = 0;
+
+  for (i = 0; i < count / 2; i++) {
+    animal[i] = new Dog();
+  }
+  for (i = count / 2; i < count; i++) {
+    animal[i] = new Cat();
+  }
+  for (unsigned int j = 0; j < count; j++) {
+    delete animal[j];
+  }
+
+  std::cout << "\n";
+  std::cout << "\n";
+
   const Animal *dog = new Dog();
   const Animal *cat = new Cat();
-  std::cout << "\n";
-  std::cout << dog->getType() << std::endl;
-  std::cout << cat->getType() << std::endl;
-  std::cout << "\n";
-  cat->makeSound();
-  dog->makeSound();
-  meta->makeSound();
-  std::cout << "\n";
-  delete meta;
+
   delete dog;
   delete cat;
   return 0;
