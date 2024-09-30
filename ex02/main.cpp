@@ -6,6 +6,7 @@ int main(void) {
   const unsigned int count = 2;
   const Animal *animal[count];
   unsigned int i = 0;
+  // Animal a;
 
   std::cout << "\nRAINING CATS AND DOGS\n\n";
 

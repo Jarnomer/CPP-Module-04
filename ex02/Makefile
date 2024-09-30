@@ -1,4 +1,4 @@
-NAME 		:=	brain
+NAME 		:=	abstract
 BUILDLOG	:=	build.log
 BUILDDIR	:=	build
 DEPENDDIR	:=	.deps

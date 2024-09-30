@@ -14,6 +14,9 @@ public:
   void setIdea(unsigned int index, std::string idea);
   std::string getIdea(unsigned int index) const;
 
+private:
+  static const unsigned int limit = 100;
+
 protected:
-  std::string ideas[100]{};
+  std::string ideas[limit]{};
 };

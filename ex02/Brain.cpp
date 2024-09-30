@@ -1,5 +1,7 @@
 #include "Brain.hpp"
 
+const unsigned int Brain::limit;
+
 Brain::Brain(void) { std::cout << "Brain constructor called\n"; }
 
 Brain::~Brain(void) { std::cout << "Brain deconstructor called\n"; }
@@ -12,7 +14,7 @@ Brain::Brain(const Brain &other) {
 Brain &Brain::operator=(const Brain &other) {
   std::cout << "Brain copy assignment operator called\n";
   if (this != &other) {
-    for (unsigned int i = 0; i < 100; i++) {
+    for (unsigned int i = 0; i < limit; i++) {
       this->ideas[i] = other.ideas[i];
     }
   }
@@ -20,7 +22,7 @@ Brain &Brain::operator=(const Brain &other) {
 }
 
 void Brain::setIdea(unsigned int index, std::string idea) {
-  if (index >= 100) {
+  if (index >= limit) {
     std::cout << "Idea out of brain capacity\n";
     return;
   } else {
@@ -29,7 +31,7 @@ void Brain::setIdea(unsigned int index, std::string idea) {
 }
 
 std::string Brain::getIdea(unsigned int index) const {
-  if (index >= 100) {
+  if (index >= limit) {
     std::cout << "Idea out of brain capacity\n";
     return {};
   } else {
